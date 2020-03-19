@@ -1,0 +1,11 @@
+.tableCell {
+    max-height: 20px !important;
+}
+.tableCellDynamic {
+    height: auto !important;
+    overflow: hidden !important;
+    max-height: 400px !important;
+}
+.tableButton{
+    margin-bottom: 2px !important;
+}

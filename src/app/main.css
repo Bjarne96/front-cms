@@ -1,0 +1,45 @@
+/* Colors used all in the components and views */
+.themeColor {
+    color: #27199d !important;
+}
+.whiteColor {
+    color: white !important;
+}
+.themeBackgroundcolor {
+    background-color: #27199d !important;
+}
+.themeSecondBackgroundcolor {
+    background-color: #282a71 !important;
+}
+
+/* CSS styling used in any component and views */
+.noBorder {
+    border-width: 0px !important;
+}
+.noBorderTop {
+    border-top-width: 0px !important;
+}
+
+/* transition for mainFrame besides the sidebar */
+.mainFrameMargin {
+    margin-left: 151px;
+    transition: margin 0.5s;
+    -webkit-transition: margin 0.5s ease;
+}
+.mainFrameNoMargin {
+    margin-left: 0px;
+    transition: margin 0.5s;
+    -webkit-transition: margin 0.5s ease;
+}
+/* Styles for Main Div / Main Frame */
+.mainFrame {
+    overflow: auto !important;
+}
+/* Styles for Inner Div / Inner Frame */
+.innerFrame {
+    margin-right: 15px !important;
+    margin-left: 15px !important;
+    margin-top: 15px !important;
+    margin-bottom: 15px !important;
+    overflow: auto !important;
+}

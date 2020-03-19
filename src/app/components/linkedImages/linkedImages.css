@@ -1,0 +1,31 @@
+.galery{
+    border: 2px solid grey;
+    border-radius: 5px;
+    min-height: 150px;
+}
+.thumbnail{
+    width: 96px;
+    height: 96px;
+    overflow: hidden;
+    margin: auto 0;
+    max-height: 96px;
+}
+.card{
+    width: 96px !important;
+    display: inline-block !important;
+    margin: 5px !important;
+}
+.description {
+    overflow: hidden;
+    margin: 0px 5px;
+    max-height: 19px;
+}
+.content {
+    padding: 5px !important;
+}
+.delButton{
+    margin-left: 5px;
+}
+.hide {
+    display: none;
+}

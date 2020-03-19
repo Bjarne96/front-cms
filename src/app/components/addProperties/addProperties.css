@@ -1,0 +1,11 @@
+.marginBot{
+    margin-bottom: 10px !important;
+}
+.removeIcon{
+    float: right;
+    color: #db2828;
+    margin-left: 5px !important;
+}
+.autoWidth{
+    width: auto !important;
+}
