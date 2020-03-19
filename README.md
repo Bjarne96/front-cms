@@ -1,16 +1,13 @@
-# API - CMS
+# Front - CMS
 
-Contains:
-Frontend From API CMS
-
-Run the Server:
+Install the Server:
 To install npm modules run "npm install".
 To build the server: "npm run build".
-To start the server and watch the server files: "npm run watch".
-For separate consoles go "npm run api" and "npm run web" and "npm run mongo"
+
+Start the Server:
+To start the server in production: "npm run web"
+To start the server in development: "npm run dev"
 
 Server Configuration:
-API is on "https://localhost:4000".
-API-Frontend is on "https://localhost:3000".
+Frontend is on "https://localhost:3000".
 
-To Test run "yarn jest"
