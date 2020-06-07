@@ -6,7 +6,7 @@ import { IArticle } from "./../../schemas";
 
 //Gets all articles
 export const getArticles = async () => {
-    let articles = await request.getData("articles");;
+    let articles = await request.getData("articles");
     return articles;
 }
 

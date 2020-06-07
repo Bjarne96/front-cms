@@ -8,7 +8,7 @@
     "build": "./node_modules/.bin/webpack && tsc",
     "web": "node dist/index.js",
     "dev": "concurrently \"tsc -w\" \"nodemon dist/index.js\" \"npm run watch-webpack\"",
-    "watch-webpack": "webpack-dev-server --env.APICMS=https://api-cms-schurwolldecke.herokuapp.com --progress --colors --hot --config ./webpack.config.js"
+    "watch-webpack": "webpack-dev-server --env.APICMS=https://api-cms-schurwolldecke.herokuapp.com --colors --hot --config ./webpack.config.js"
   },
   "author": "",
   "license": "ISC",
