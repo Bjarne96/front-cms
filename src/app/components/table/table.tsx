@@ -1,7 +1,7 @@
 import * as React from 'react';
 import autobind from "autobind-decorator";
 import './table.css';
-import { Loader, Table, Button, Item } from 'semantic-ui-react';
+import { Loader, Table, Button } from 'semantic-ui-react';
 import { IDefaultSchema } from "./../../interfaces/viewInterfaces"
 import LinkedImages from '../linkedImages/linkedImages';
 import DisplayProperties from '../displayProperties/displayProperties';
@@ -30,6 +30,7 @@ export class DataTable extends React.Component <IProps, Istate>{
         tableData = [];
         let schemaFields = [];
         let showColumns = [];
+        if(this.props.data == undefined) return;
         //define columns to show and the title of each column
         for(let i = 0; i < this.props.Schema.fields.length; i++) {
             let field = this.props.Schema.fields[i];
@@ -54,6 +55,7 @@ export class DataTable extends React.Component <IProps, Istate>{
 
     render() {
         if(this.state.loading) return <Loader active />
+        if(this.props.data == undefined) return <h1>Error Table Data undefined</h1>
         return <Table celled striped className="customTable">
                 <Table.Body>
                 {tableData.map( (row, rowI) => {

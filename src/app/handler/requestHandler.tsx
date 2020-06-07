@@ -38,7 +38,7 @@ let Request = async (path: string, fetchType: "GET" | "POST" | "PUT" | "DELETE",
         //Sets token and saves it as cookie (only working with forEach)
         let token;
         response.headers.forEach((val, key) => {if(key === "authorization"){token = val; }});
-        saveJWT(token);
+        if(token != undefined) saveJWT(token);
         //Todo: setTimeout here and cancel the other timeout
 
     //Checks for expired token and loggs out the user
