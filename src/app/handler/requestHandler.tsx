@@ -1,14 +1,14 @@
 import { getJWT, saveJWT, removeJWT } from './JWTHandler';
-//import { Types } from 'mongoose';
+import * as config from "./../../../config";
 
 //request
 let Request = async (path: string, fetchType: "GET" | "POST" | "PUT" | "DELETE", data, fileupload?) => {
     let JWT = await getJWT();
 
-    let header = {"Content-Type": "application/json","Authorization": JWT,}
+    let header = { "Content-Type": "application/json", "Authorization": JWT, }
 
     //Sets url
-    let  url = "https://api-cms-schurwolldecke.herokuapp.com/" + path; //temporary url fix
+    let url = config.api + path; //temporary url fix
 
     let fetchObject: any = {
         credentials: "same-origin",
@@ -17,7 +17,7 @@ let Request = async (path: string, fetchType: "GET" | "POST" | "PUT" | "DELETE",
     };
 
     //Only Fileupload, no body needed and puts files in header
-    if(fileupload) { 
+    if (fileupload) {
         delete header["Content-Type"];
         header["Authorization"] = JWT;
         header["Accept"] = "*/*";
@@ -25,7 +25,7 @@ let Request = async (path: string, fetchType: "GET" | "POST" | "PUT" | "DELETE",
     }
 
     //Sets body by not GET request and only if its json
-    if(fetchType !== "GET" && header["Content-Type"] === "application/json") {
+    if (fetchType !== "GET" && header["Content-Type"] === "application/json") {
         fetchObject['body'] = JSON.stringify(data);
     }
     //Sends Request
@@ -34,23 +34,23 @@ let Request = async (path: string, fetchType: "GET" | "POST" | "PUT" | "DELETE",
     const json: any = await response.json();
 
     //If the Request was successful, an new Token from the server will refresh the cookie
-    if(json.status === "ok") {
+    if (json.status === "ok") {
         //Sets token and saves it as cookie (only working with forEach)
         let token;
-        response.headers.forEach((val, key) => {if(key === "authorization"){token = val; }});
+        response.headers.forEach((val, key) => { if (key === "authorization") { token = val; } });
         saveJWT(token);
         //Todo: setTimeout here and cancel the other timeout
 
-    //Checks for expired token and loggs out the user
-    } else if (json.result === "Login expired."){
+        //Checks for expired token and loggs out the user
+    } else if (json.result === "Login expired.") {
         await removeJWT();
-        location.reload(); 
+        location.reload();
     }
 
     //Returns body as json
     //console.log("json", json)
     return json;
-    
+
 }
 
 //Gets all data from a table
@@ -73,14 +73,14 @@ export const insertRow = async (path: string, data: any) => {
 };
 
 //Updates a specific dataset
-export const updateRow = async (path: string, id:string, data: any) => {
+export const updateRow = async (path: string, id: string, data: any) => {
     let full_path = path + "/" + id;
     let json = await Request(full_path, "POST", data);
     return json;
 };
 
 //Deletes a specific dataset
-export const deleteRow = async (path: string, id:string) => {
+export const deleteRow = async (path: string, id: string) => {
     let full_path = path + "/" + id;
     let json = await Request(full_path, "DELETE", {});
     return json;
@@ -91,7 +91,7 @@ export const deleteRow = async (path: string, id:string) => {
 export const loginUser = async (email: string, password) => {
 
     //Sets values into body
-    let body: any = {email: email, password: password};
+    let body: any = { email: email, password: password };
 
     //Posts body
     let json = await Request("login", "POST", body);
