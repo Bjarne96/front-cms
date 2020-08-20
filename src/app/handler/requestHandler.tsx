@@ -8,7 +8,7 @@ let Request = async (path: string, fetchType: "GET" | "POST" | "PUT" | "DELETE",
     let header = { "Content-Type": "application/json", "Authorization": JWT, }
 
     //Sets url
-    let url = config.api + path; //temporary url fix
+    let url = config.api + path;
 
     let fetchObject: any = {
         credentials: "same-origin",
