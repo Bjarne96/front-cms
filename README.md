@@ -19,10 +19,9 @@ Despite integrating everything, I lacked in-depth knowledge of IT security and h
 
 - Prioritizing the learning experience ahead of the fast e-commerce website launch, shows I am a developer at heart. For potential future self-employed businesses I am aware of that fact. 
 - React.js as a Single Page Application is not the best solution for a simple e-commerce website.
-<br> A performance-optimized site using native technologies is easier to optimize for On-Page SEO.
+<br> A performance-optimized site using native technologies is easier to optimize for On-Page SEO.<br> 
 <a href="https://github.com/Bjarne96/webbase"><u>Repository of a performance-optimzed website.</u></a>
-- I should have delved deeper into TypeScript, it added a lot of work instead of saving time; I only grasped its true benefits in later projects.
-<br>
+- I should have delved deeper into TypeScript, it added a lot of work instead of saving time; I only grasped its true benefits in later projects.<br>
 <a href="https://github.com/Bjarne96/learn-with-karel"><u>Repository to a later TypeScript Project.</u></a>
 
 ## Installation (DEPRECATED)
